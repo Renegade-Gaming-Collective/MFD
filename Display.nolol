@@ -1,0 +1,16 @@
+include "include/state_common.nolol"
+:MD="\nLoading...\nWritten by\nSpyingwind"
+:STATEPAGE=STATE_PAGE1
+main> 
+if :STATEPAGE==STATE_PAGE1 then
+	:MD=:P1
+end
+if :STATEPAGE==STATE_PAGE2 then
+	:MD=:P2
+end
+if :STATEPAGE==STATE_PAGE3 then
+	:MD=:P3
+end
+goto main
+:MD="\nError"
+

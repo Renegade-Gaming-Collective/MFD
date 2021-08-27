@@ -1,0 +1,38 @@
+include "std/logic"
+
+// Definitions
+define on=1
+define off=0
+
+// define possible states
+define STATE_PAGE_ISAN=0
+define STATE_PAGE1=1
+define STATE_PAGE2=2
+define STATE_PAGE3=3
+
+// Settings
+define Default_Button_State=on
+define :ISAN1=:i1
+define :ISAN2=:i2
+define :ISAN3=:i3
+define :ISAN4=:i4
+define :Func1=:f1
+define :Func2=:f2
+define :Func3=:f3
+define :Func4=:f4
+define :Func5=:f5
+define :Func6=:f6
+define :Func7=:f7
+define :Func8=:f8
+define :Func9=:f9
+define :Func10=:f10
+define :Func11=:f11
+define :Func12=:f12
+
+// shared page state
+define :STATEPAGE=:MP
+
+// Change state macro
+macro SMEND(newstate) line
+	:STATEPAGE=newstate
+end

@@ -1,0 +1,93 @@
+include "include/state_common.nolol"
+:MD="\nLoading...\nWritten by\nSpyingwind"
+:STATEPAGE=STATE_PAGE1
+main> 
+if :STATEPAGE==STATE_PAGE1 then
+	:MD=:P1
+end
+if :STATEPAGE==STATE_PAGE2 then
+	:MD=:P2
+end
+
+// Change f1 to f12 to your desired button names
+if :STATEPAGE==STATE_PAGE1 then
+	:L1=:Func1
+	:L2=:Func2
+	:R1=:Func3
+	:R2=:Func4
+	while :STATEPAGE==STATE_PAGE1 do
+		if :Func1!=:L1 then
+			:Func1=1-:Func1
+			:L1=:Func1
+		end
+		if :Func2!=:L2 then
+			:Func2=1-:Func2
+			:L2=:Func2
+		end
+		if :Func3!=:R1 then
+			:Func3=1-:Func3
+			:R1=:Func3
+		end
+		if :Func4!=:R2 then
+			:Func4=1-:Func4
+			:R2=:Func4
+		end
+	end
+end
+if :STATEPAGE==STATE_PAGE2 then
+	:L1=:Func5
+	:L2=:Func6
+	:R1=:Func7
+	:R2=:Func8
+	while :STATEPAGE==STATE_PAGE2 do
+		if :Func5!=:L1 then
+			:Func5=1-:Func5
+			:L1=:Func5
+		end
+		if :Func6!=:L2 then
+			:Func6=1-:Func6
+			:L2=:Func6
+		end
+		if :Func7!=:R1 then
+			:Func7=1-:Func7
+			:R1=:Func7
+		end
+		if :Func8!=:R2 then
+			:Func8=1-:Func8
+			:R2=:Func8
+		end
+	end
+end
+
+if :STATEPAGE==STATE_PAGE1 then
+	:MP=1
+	if :MPP==Default_Button_State then
+		// Goto previous page
+		:MPP=1-:MPP
+		SMEND(STATE_PAGE1)		
+		goto main
+	end
+	if :MPN==Default_Button_State then
+		// Goto next page
+		:MPN=1-:MPN
+		SMEND(STATE_PAGE2)		
+		goto main
+	end
+end
+
+if :STATEPAGE==STATE_PAGE2 then
+	:MP=2
+	if :MPP==Default_Button_State then
+		// Goto previous page
+		:MPP=1-:MPP
+		SMEND(STATE_PAGE1)		
+		goto main
+	end
+	if :MPN==Default_Button_State then
+		// Goto next page
+		:MPN=1-:MPN
+		SMEND(STATE_PAGE2)		
+		goto main
+	end
+end
+goto main

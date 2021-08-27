@@ -1,0 +1,31 @@
+What each Page would look like:
+===========
+P1 :
+-----------
+< f1
+f3 >
+< f2
+f4 >
+===========
+P2 :
+-----------
+< f5
+f7 >
+< f6
+f8 >
+===========
+P3 :
+-----------
+< f9
+f11 >
+< f10
+f12 >
+-----------
+===========
+
+What device properies are needed to be set to in a memory chip:
+
+P1="\n< f1\nf3 >\n< f2\nf4 >"
+P2="\n< f5\nf7 >\n< f6\nf8 >"
+P3="\n< f9\nf11 >\n< f10\nf12 >"
+

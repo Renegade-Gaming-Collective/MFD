@@ -1,0 +1,51 @@
+include "include/state_common.nolol"
+
+main> 
+while :STATEPAGE==STATE_PAGE1 do
+	:MP=1
+	if :MPP==Default_Button_State then
+		// Goto previous page
+		:MPP=1-:MPP
+		SMEND(STATE_PAGE3)		
+		goto main
+	end
+	if :MPN==Default_Button_State then
+		// Goto next page
+		:MPN=1-:MPN
+		SMEND(STATE_PAGE2)		
+		goto main
+	end
+end
+
+while :STATEPAGE==STATE_PAGE2 do
+	:MP=2
+	if :MPP==Default_Button_State then
+		// Goto previous page
+		:MPP=1-:MPP
+		SMEND(STATE_PAGE1)		
+		goto main
+	end
+	if :MPN==Default_Button_State then
+		// Goto next page
+		:MPN=1-:MPN
+		SMEND(STATE_PAGE3)		
+		goto main
+	end
+end
+
+while :STATEPAGE==STATE_PAGE3 do
+	:MP=3
+	if :MPP==Default_Button_State then
+		// Goto previous page
+		:MPP=1-:MPP
+		SMEND(STATE_PAGE2)		
+		goto main
+	end
+	if :MPN==Default_Button_State then
+		// Goto next page
+		:MPN=1-:MPN
+		SMEND(STATE_PAGE1)		
+		goto main
+	end
+end
+goto main
